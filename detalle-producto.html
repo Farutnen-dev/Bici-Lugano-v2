@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos - BiciLugano</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-bicycle"></i>
+                    <h1>BiciLugano</h1>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="detalle-producto-main">
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a> / 
+            <a href="productos.html">Productos</a> / 
+            <span id="categoria-actual">Categoría</span>
+        </div>
+
+        <h2 id="titulo-categoria">Modelos Disponibles</h2>
+        
+        <div class="filtros">
+            <div class="filtro-marca">
+                <label for="marca">Filtrar por marca:</label>
+                <select id="marca">
+                    <option value="todas">Todas las marcas</option>
+                    <!-- Las opciones se generarán dinámicamente con JavaScript -->
+                </select>
+            </div>
+            <div class="filtro-precio">
+                <label for="precio">Rango de precio:</label>
+                <select id="precio">
+                    <option value="todos">Todos los precios</option>
+                    <option value="0-300000">Hasta $300.000</option>
+                    <option value="300000-600000">$300.000 - $600.000</option>
+                    <option value="600000-900000">$600.000 - $900.000</option>
+                    <option value="900000-1200000">$900.000 - $1.200.000</option>
+                    <option value="1200000+">Más de $1.200.000</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="modelos-grid" id="modelos-container">
+            <!-- Los modelos se cargarán dinámicamente con JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BiciLugano</h3>
+                <p>Tu tienda de bicicletas en Lugano</p>
+            </div>
+            <div class="footer-section">
+                <h3>Dirección</h3>
+                <p>Av. Riestra 5800</p>
+                <p>Lugano, Buenos Aires</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="newsletter-section">
+            <h3>Newsletter</h3>
+            <p>Suscríbete para recibir nuestras ofertas y novedades</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright Bici Lugano - 2025. Todos los derechos reservados.</p>
+            <p>Defensa de las y los consumidores. Para reclamos <a href="#" class="reclamos-link">ingresá acá</a>.</p>
+            <p>Botón de arrepentimiento: <a href="#" class="arrepentimiento-link">ingresá acá</a></p>
+        </div>
+    </footer>
+
+    <script src="detalle-producto.js"></script>
+</body>
+</html> 
