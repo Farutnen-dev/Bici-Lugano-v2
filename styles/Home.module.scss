@@ -1,0 +1,207 @@
+@import 'variables';
+@import 'mixins';
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header {
+  background: $gradient-dark;
+  color: $background-white;
+  padding: $spacing-xl 0;
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+
+  h1 {
+    font-size: $text-4xl;
+    margin-bottom: $spacing-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+
+    i {
+      color: $accent;
+    }
+  }
+
+  p {
+    font-size: $text-xl;
+    color: $text-light;
+  }
+}
+
+.mainContent {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxl;
+}
+
+.productosSection {
+  width: 100%;
+  margin-bottom: $spacing-xxl;
+}
+
+.productosGrid {
+  @include grid(3, $spacing-xl);
+  margin-bottom: $spacing-xl;
+
+  @include tablet {
+    @include grid(2, $spacing-lg);
+  }
+
+  @include mobile {
+    @include grid(1, $spacing-lg);
+  }
+}
+
+.productosGridContainer {
+  padding: 30px 30px;
+}
+
+.productoCard {
+  @include card;
+  overflow: hidden;
+  transition: $transition-base;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  .productoImagen {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition-base;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .productoInfo {
+    padding: $spacing-lg;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: $text-xl;
+      color: $primary-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    .marca {
+      color: $accent;
+      font-weight: 500;
+      margin-bottom: $spacing-xs;
+    }
+
+    .categoria {
+      color: $text-muted;
+      font-size: $text-sm;
+      margin-bottom: $spacing-sm;
+    }
+
+    .precio {
+      font-size: $text-2xl;
+      color: $primary-dark;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+    }
+
+    .descripcion {
+      color: $text-muted;
+      line-height: 1.6;
+      flex: 1;
+    }
+  }
+}
+
+.about, .contact {
+  @include card;
+  padding: $spacing-xl;
+  width: 100%;
+  text-align: center;
+  background: $background-white;
+
+  h2 {
+    font-size: $text-2xl;
+    color: $primary-dark;
+    margin-bottom: $spacing-lg;
+  }
+
+  p {
+    color: $text-muted;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto $spacing-lg;
+  }
+}
+
+.contactInfo {
+  @include flex(column, center, center);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  p {
+    @include flex(row, center, center);
+    gap: $spacing-sm;
+    color: $text-muted;
+
+    i {
+      color: $accent;
+      font-size: $text-lg;
+    }
+  }
+}
+
+.sectionFooter {
+  text-align: center;
+  margin-top: $spacing-xl;
+}
+
+.verMasButton {
+  @include button($accent, $background-white);
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $text-lg;
+  padding: $spacing-md $spacing-xl;
+
+  i {
+    transition: $transition-base;
+  }
+
+  &:hover {
+    i {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: $spacing-xxl;
+  color: $text-muted;
+  font-size: $text-lg;
+}
+
+// ... resto del código existente ... 

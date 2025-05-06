@@ -1,0 +1,163 @@
+@import 'variables';
+
+// Reset
+@mixin reset {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+// Flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Grid
+@mixin grid($columns: 1, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Responsive
+@mixin mobile {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+// Cards
+@mixin card {
+  background: $background-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-hover;
+  }
+}
+
+// Buttons
+@mixin button($bg-color: $accent, $text-color: $background-white) {
+  padding: $spacing-sm $spacing-lg;
+  background: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: $transition-base;
+  font-weight: 500;
+
+  &:hover {
+    background: darken($bg-color, 10%);
+    transform: translateY(-2px);
+    color: $text-color;
+  }
+}
+
+// Headers
+@mixin section-header {
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+  padding: $spacing-xl 0;
+  background: $gradient-dark;
+  color: $background-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+
+  h1 {
+    font-size: $text-5xl;
+    color: $background-white;
+    margin-bottom: $spacing-sm;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    color: $text-light;
+    font-size: $text-xl;
+  }
+}
+
+// Section Titles
+@mixin section-title {
+  font-size: $text-xl;
+  color: $background-white;
+  margin-bottom: $spacing-md;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: $accent;
+  }
+}
+
+// Sections
+@mixin section {
+  padding: $spacing-xxl $spacing-md;
+  text-align: center;
+  margin: $spacing-xxl 0;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+}
+
+// Form elements
+@mixin input {
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid darken($background-light, 10%);
+  border-radius: $radius-full;
+  background: $background-white;
+  color: $text-dark;
+  font-size: $text-base;
+  transition: $transition-base;
+
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    box-shadow: 0 0 0 2px rgba($accent, 0.2);
+  }
+}
+
+// Icon Circle
+@mixin icon-circle($size: 40px, $color: $accent) {
+  width: $size;
+  height: $size;
+  @include flex(row, center, center);
+  background: rgba($color, 0.1);
+  border-radius: $radius-full;
+  color: $color;
+  transition: $transition-base;
+
+  &:hover {
+    transform: scale(1.1);
+    background: $color;
+    color: $background-white;
+  }
+} 

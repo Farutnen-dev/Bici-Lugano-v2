@@ -1,0 +1,55 @@
+// Colors
+$primary-dark: #1a1a1a;
+$primary-light: #2c3e50;
+$accent: #2e7d32;
+$accent-hover: #1b5e20;
+$text-dark: #2c3e50;
+$text-light: #e0e0e0;
+$text-muted: #546e7a;
+$background-light: #f8f9fa;
+$background-white: #ffffff;
+$error: #d32f2f;
+
+// Gradients
+$gradient-dark: linear-gradient(135deg, $primary-dark 0%, $primary-light 100%);
+$gradient-light: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+
+// Shadows
+$shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-full: 30px;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$spacing-xl: 40px;
+$spacing-xxl: 60px;
+
+// Font Sizes
+$text-xs: 0.8em;
+$text-sm: 0.9em;
+$text-base: 1em;
+$text-lg: 1.1em;
+$text-xl: 1.2em;
+$text-2xl: 1.4em;
+$text-3xl: 1.8em;
+$text-4xl: 2.5em;
+$text-5xl: 3em;
+
+// Transitions
+$transition-base: all 0.3s ease;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px; 

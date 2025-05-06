@@ -1,0 +1,140 @@
+@import 'variables';
+@import 'mixins';
+
+.footer {
+  background: $gradient-dark;
+  color: $background-white;
+  padding: $spacing-xl 0 0 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  @include grid(3, $spacing-xl);
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    @include grid(2, $spacing-lg);
+  }
+
+  @include mobile {
+    @include grid(1, $spacing-lg);
+  }
+}
+
+.footerSection {
+  h3 {
+    @include section-title;
+  }
+
+  p {
+    color: $text-light;
+    margin-bottom: $spacing-sm;
+    line-height: 1.6;
+  }
+}
+
+.socialLinks {
+  @include flex(row, flex-start, center);
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+
+  a {
+    width: 40px;
+    height: 40px;
+    @include flex(row, center, center);
+    background: rgba($background-white, 0.1);
+    border-radius: $radius-full;
+    color: $background-white;
+    transition: $transition-base;
+
+    i {
+      font-size: $text-lg;
+    }
+
+    &:hover {
+      background: $accent;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.newsletterSection {
+  background: rgba($background-white, 0.05);
+  padding: $spacing-xl $spacing-md;
+  text-align: center;
+
+  h3 {
+    font-size: $text-2xl;
+    color: $background-white;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $text-light;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.newsletterForm {
+  max-width: 500px;
+  margin: 0 auto;
+  @include flex(row, center, center);
+  gap: $spacing-sm;
+
+  @include mobile {
+    @include flex(column, center, center);
+  }
+
+  input {
+    @include input;
+    flex: 1;
+    background: rgba($background-white, 0.1);
+    border: 1px solid rgba($background-white, 0.2);
+    color: $background-white;
+
+    &::placeholder {
+      color: rgba($background-white, 0.6);
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+  }
+
+  button {
+    @include button($accent, $background-white);
+    white-space: nowrap;
+  }
+}
+
+.footerBottom {
+  background: darken($primary-dark, 5%);
+  padding: $spacing-md;
+  text-align: center;
+  margin-top: $spacing-xl;
+
+  p {
+    color: $text-light;
+    font-size: $text-sm;
+    margin-bottom: $spacing-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $accent;
+    text-decoration: none;
+    transition: $transition-base;
+
+    &:hover {
+      color: lighten($accent, 10%);
+      text-decoration: underline;
+    }
+  }
+} 

@@ -1,0 +1,180 @@
+@import 'variables';
+@import 'mixins';
+
+.gallery {
+  padding: $spacing-xxl $spacing-md;
+  background: $background-light;
+
+  h2 {
+    text-align: center;
+    font-size: $text-4xl;
+    color: $text-dark;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.galleryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  @include grid(3, $spacing-lg);
+
+  @include tablet {
+    @include grid(2, $spacing-md);
+  }
+
+  @include mobile {
+    @include grid(1, $spacing-md);
+  }
+}
+
+.productCard {
+  @include card;
+  overflow: hidden;
+  position: relative;
+
+  .productImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: $transition-base;
+  }
+
+  .productInfo {
+    padding: $spacing-md;
+
+    h3 {
+      font-size: $text-xl;
+      color: $text-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    .productPrice {
+      font-size: $text-lg;
+      color: $accent;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+    }
+
+    .productDescription {
+      color: $text-muted;
+      font-size: $text-base;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  .productActions {
+    @include flex(row, space-between, center);
+    padding: $spacing-md;
+    border-top: 1px solid darken($background-light, 5%);
+
+    .viewDetails {
+      @include button($accent, $background-white);
+      font-size: $text-sm;
+    }
+
+    .addToCart {
+      @include button($primary-dark, $background-white);
+      font-size: $text-sm;
+    }
+  }
+
+  &:hover {
+    .productImage {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.sectionFooter {
+  text-align: center;
+  margin-top: $spacing-xl;
+}
+
+.verMasButton {
+  @include button($accent, $background-white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  i {
+    transition: $transition-base;
+  }
+
+  &:hover {
+    i {
+      transform: translateX(5px);
+    }
+  }
+}
+
+// Sección de ofertas
+.ofertas {
+  background: $gradient-light;
+  padding: $spacing-xxl $spacing-md;
+  margin-top: $spacing-xxl;
+
+  h2 {
+    text-align: center;
+    font-size: $text-4xl;
+    color: $text-dark;
+    margin-bottom: $spacing-xl;
+  }
+
+  .ofertasContainer {
+    @include grid(2, $spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include mobile {
+      @include grid(1, $spacing-md);
+    }
+  }
+
+  .ofertaCard {
+    @include card;
+    background: $background-white;
+    padding: $spacing-lg;
+    @include flex(row, space-between, center);
+    gap: $spacing-lg;
+
+    @include mobile {
+      @include flex(column, center, center);
+      text-align: center;
+    }
+
+    .ofertaInfo {
+      flex: 1;
+
+      h3 {
+        font-size: $text-2xl;
+        color: $text-dark;
+        margin-bottom: $spacing-sm;
+      }
+
+      .ofertaPrice {
+        font-size: $text-xl;
+        color: $accent;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+      }
+
+      .ofertaDescription {
+        color: $text-muted;
+        margin-bottom: $spacing-md;
+      }
+    }
+
+    .ofertaImage {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: $radius-md;
+
+      @include mobile {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  }
+} 
